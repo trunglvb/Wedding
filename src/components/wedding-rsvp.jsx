@@ -98,7 +98,7 @@ export function WeddingRsvp() {
 					error.message !== "Failed to fetch" &&
 					error.message !== "HTTP error"
 					? error.message
-					: "Chưa nhận được xác nhận từ hệ thống. Thông tin đã được giữ lại. Nếu vừa gửi, bạn vui lòng kiểm tra trước khi gửi lại để tránh trùng.",
+					: "Chưa nhận được xác nhận từ hệ thống. Thông tin đã được giữ lại. Nếu vừa gửi, bạn vui lòng kiểm tra trước khi gửi lại để tránh trùng",
 			);
 		} finally {
 			sending.current = false;
