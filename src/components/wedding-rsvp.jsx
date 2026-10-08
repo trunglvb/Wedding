@@ -116,9 +116,6 @@ export function WeddingRsvp() {
 					<span className="eyebrow">
 						06 / MỘT LỜI HẸN VỚI CHÚNG MÌNH
 					</span>
-					<span className="rsvp-script" aria-hidden="true">
-						Rsvp.
-					</span>
 					<h2 id="rsvp-title">
 						Bạn sẽ đến
 						<br />

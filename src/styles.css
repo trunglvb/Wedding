@@ -31,3 +31,37 @@
 @media(max-width:768px){.hero-picture img{object-fit:cover}.hero{min-height:610px}.hero-label{font-size:8px}.couple-names{font-size:clamp(2.5rem,10.8vw,4.1rem);gap:0;margin:8px 0 17px;line-height:1.06}.couple-names i{font-size:20px;margin:2px 0}.couple-section{padding:46px 6% 43px}.section-heading{margin-bottom:35px}.section-heading h2{font-size:clamp(2.1rem,8.4vw,2.7rem);line-height:1.12;margin:15px -5px 18px}.heading-foot p{font-size:16px}.person{gap:23px}.portrait-composition{max-width:300px;padding:12px 24px 36px 16px}.portrait-index{font-size:78px;top:-10px;left:-8px}.portrait-frame{padding:6px}.portrait-caption{left:24px;bottom:11px;font-size:7px}.portrait-detail{width:28%;height:29%}.person-copy,.groom .person-copy{padding:0 3%}.person-copy h3{font-size:41px;margin:10px 0 7px}.occupation{font-size:11px;margin-bottom:14px}.person-copy .biography,.person-copy .meet-note p{font-size:15px;line-height:1.8;font-family:Manrope,Arial,sans-serif;font-style:normal;font-weight:400}.meet-note{margin-top:17px;padding-top:17px}.meet-note p{margin-top:10px}.meet-note>.eyebrow{font-size:8px}.quote-mark{top:5px}.couple-interlude{margin:28px 0 23px}.couple-interlude i{font-size:32px}.groom .portrait-composition{margin-left:auto;margin-right:auto}.groom .portrait-caption{right:26px}.groom .portrait-index{right:0}.story-header{height:105px;flex-basis:105px;padding-top:16px}.story-header h2{font-size:34px}.timeline{flex-basis:105px}.chapter-intro h3{font-size:24px}.chapter-date strong{font-size:32px}.bubble-heading{flex-basis:69px}.bubble-heading h3{font-size:26px}.bubble-field{gap:6px 7px;padding-top:8px;padding-bottom:8px}.bubble-photo,.bubble-slot:nth-child(4n) .bubble-photo,.bubble-slot:nth-child(5n) .bubble-photo{border-width:1px;padding:0;border-radius:6px}.bubble-photo img{border-radius:5px}.bubble-slot-25{grid-column:3}.lightbox-stage>img{width:100%;height:100%;object-fit:contain}.lightbox-top h2{font-size:23px}.site-footer>span{font-size:25px}.music-notice{right:14px;bottom:63px;font-size:11px}}
 @media(max-width:370px){.person-copy h3{font-size:37px}.section-heading h2{font-size:32px}.couple-names{font-size:10.5vw}.bubble-heading h3{font-size:24px}}
 @media(prefers-reduced-motion:reduce){.typing-cursor{display:none}.typing-reserve{visibility:visible}.typing-live{display:none}}
+
+.memory-photo .photo-button {
+  padding: 0;
+  border: 2px solid #f3d6bd;
+  border-radius: 9px;
+  background: transparent;
+  overflow: hidden;
+  box-shadow: 0 7px 18px #54122240;
+}
+
+.memory-photo .photo-button img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 7px;
+}
+
+.memory-photo:hover .photo-button,
+.memory-photo .photo-button:focus-visible {
+  border-color: #f3d6bd;
+  box-shadow: 0 12px 28px #54122255;
+}
+
+@media (max-width: 768px) {
+  .memory-photo .photo-button {
+    border-width: 1px;
+    border-radius: 6px;
+  }
+  .memory-photo .photo-button img {
+    border-radius: 5px;
+  }
+}
