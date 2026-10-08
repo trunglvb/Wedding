@@ -34,7 +34,7 @@ import "./fonts.css";
 import "./styles.css";
 
 gsap.registerPlugin(ScrollTrigger);
-const photo = (id) => `/photos/${id}.jpg`;
+const photo = (id) => `${import.meta.env.BASE_URL}photos/${id}.jpg`;
 const pad = (n) => String(n).padStart(2, "0");
 const reduced = () =>
 	window.matchMedia("(prefers-reduced-motion: reduce)").matches;
