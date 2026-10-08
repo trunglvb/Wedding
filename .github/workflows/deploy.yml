@@ -34,7 +34,8 @@ jobs:
               run: npm ci
 
             - name: Build
-              env: VITE_API_RSVP_ENDPOINT_KEY: ${{ secrets.VITE_API_RSVP_ENDPOINT_KEY }}
+              env:
+                  VITE_API_RSVP_ENDPOINT_KEY: ${{ secrets.VITE_API_RSVP_ENDPOINT_KEY }}
               run: npm run build -- --base=./
 
             - name: Setup Pages
