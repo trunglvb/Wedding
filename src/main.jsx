@@ -324,7 +324,7 @@ function Couple({ onPreview }) {
 			meet: couple.brideMeet,
 			quote: "EM KỂ",
 			id: 8,
-			detail: 23,
+			detail: 26,
 			label: "Chân dung cô dâu trong váy cưới trắng",
 			number: "01",
 		},
@@ -336,7 +336,7 @@ function Couple({ onPreview }) {
 			bio: couple.groomBio,
 			meet: couple.groomMeet,
 			quote: "ANH KỂ",
-			id: 6,
+			id: 27,
 			detail: 2,
 			label: "Lường Cường trong quân phục bên Nguyễn Nguyệt",
 			number: "02",
@@ -400,9 +400,6 @@ function Couple({ onPreview }) {
 							<h3>
 								<TypingTitle text={person.name} speed={75} />
 							</h3>
-							<span className="occupation">
-								<Typed speed={35}>{person.job}</Typed>
-							</span>
 							<p className="biography">
 								<Typed speed={13}>{person.bio}</Typed>
 							</p>
