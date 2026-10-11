@@ -82,3 +82,43 @@
   object-fit: cover;
   object-position: center;
 }
+
+
+/* Mobile only: dark browser background and portrait story photos. */
+@media (max-width: 768px) {
+  html, body {
+    background-color: #000;
+  }
+
+  .story-section {
+    height: max(100svh, calc(132vw + 430px));
+    min-height: 0;
+    max-height: none;
+  }
+
+  .chapter-photos {
+    grid-template-rows: repeat(2, auto);
+    align-content: center;
+  }
+
+  .memory-photo,
+  .memory-photo:nth-child(even),
+  .memory-photo:nth-child(odd) {
+    height: auto;
+  }
+
+  .memory-photo .photo-button {
+    flex: none;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 2 / 3;
+  }
+
+  .memory-photo .photo-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
