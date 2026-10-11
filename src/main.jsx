@@ -337,7 +337,7 @@ function Couple({ onPreview }) {
 			meet: couple.groomMeet,
 			quote: "ANH KỂ",
 			id: 27,
-			detail: 2,
+			detail: 29,
 			label: "Lường Cường trong quân phục bên Nguyễn Nguyệt",
 			number: "02",
 		},

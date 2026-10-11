@@ -35,7 +35,7 @@ export const memories = [
 		title: "Từ một lời chào,",
 		italic: "thành một người thương.",
 		note: "Có những người xuất hiện, rồi khiến mọi điều trở nên khác biệt.",
-		photos: [18, 19, 3, 0],
+		photos: [19, 28, 2, 30],
 	},
 	{
 		year: "2025",
@@ -43,7 +43,7 @@ export const memories = [
 		title: "Đi đâu cũng được.",
 		italic: "Miễn là cùng nhau.",
 		note: "Những chuyến đi nhỏ, những câu chuyện dài. Bình thường thôi, mà thương thật nhiều.",
-		photos: [1, 20, 9, 11],
+		photos: [1, 20, 31, 32],
 	},
 	{
 		year: "Now",
@@ -51,7 +51,7 @@ export const memories = [
 		title: "Và rồi, chúng mình",
 		italic: "chọn một đời bên nhau.",
 		note: "Từ “anh và em”, thành “chúng mình”. Một lời đồng ý, một hành trình mới.",
-		photos: [4, 17, 24, 25],
+		photos: [5, 24, 7, 15],
 	},
 ];
 export const allPhotos = Object.keys(photoMeta)
