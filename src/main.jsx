@@ -968,7 +968,6 @@ function App() {
 				<span>
 					{couple.bride} <i>&</i> {couple.groom}
 				</span>
-				<small>2024 — MÃI VỀ SAU</small>
 			</footer>
 			<MusicPlayer />
 			<Lightbox

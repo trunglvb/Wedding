@@ -270,9 +270,6 @@ export function WeddingRsvp() {
 									</fieldset>
 									<label htmlFor="rsvp-note">
 										Lời nhắn{" "}
-										<span className="rsvp-optional">
-											· không bắt buộc
-										</span>
 										<textarea
 											id="rsvp-note"
 											name="note"
