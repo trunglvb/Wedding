@@ -35,7 +35,7 @@ export const memories = [
 		title: "Từ một lời chào,",
 		italic: "thành một người thương.",
 		note: "Có những người xuất hiện, rồi khiến mọi điều trở nên khác biệt.",
-		photos: [19, 28, 2, 30],
+		photos: [28, 34, 35, 30],
 	},
 	{
 		year: "2025",
@@ -43,7 +43,7 @@ export const memories = [
 		title: "Đi đâu cũng được.",
 		italic: "Miễn là cùng nhau.",
 		note: "Những chuyến đi nhỏ, những câu chuyện dài. Bình thường thôi, mà thương thật nhiều.",
-		photos: [1, 20, 31, 32],
+		photos: [1, 36, 31, 37],
 	},
 	{
 		year: "Now",

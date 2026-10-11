@@ -273,6 +273,35 @@ function Hero() {
 }
 
 function PhotoButton({ id, onPreview, className = "", label, children }) {
+	const imageRef = useRef(null);
+
+	useEffect(() => {
+		const image = imageRef.current;
+		if (!image || !photoMeta[id]) return;
+
+		const applyFraming = () => {
+			const frame = image.parentElement;
+			if (!frame) return;
+			const rect = frame.getBoundingClientRect();
+			if (!rect.width || !rect.height) return;
+			const metadata = photoMeta[id];
+			const position = coverFraming(
+				metadata,
+				metadata.faces,
+				rect.width,
+				rect.height,
+				[0.5, 0.38],
+			);
+			image.style.objectFit = "cover";
+			image.style.objectPosition = position.position;
+		};
+
+		applyFraming();
+		const observer = new ResizeObserver(applyFraming);
+		observer.observe(image.parentElement);
+		return () => observer.disconnect();
+	}, [id]);
+
 	return (
 		<button
 			type="button"
@@ -281,6 +310,7 @@ function PhotoButton({ id, onPreview, className = "", label, children }) {
 			aria-label={label || `Xem ảnh cưới ${id + 1}`}
 		>
 			<img
+				ref={imageRef}
 				src={photo(id)}
 				alt={label || `Ảnh cưới ${id + 1}`}
 				loading="lazy"
