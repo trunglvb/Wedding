@@ -35,6 +35,13 @@ import "./styles.css";
 
 gsap.registerPlugin(ScrollTrigger);
 const photo = (id) => `${import.meta.env.BASE_URL}photos/${id}.jpg`;
+const photoOptimized = (id) => {
+	const base = `${import.meta.env.BASE_URL}photos/optimized/${id}`;
+	return {
+		webp: `${base}-480.webp 480w, ${base}-800.webp 800w, ${base}-1200.webp 1200w`,
+		jpg: photo(id),
+	};
+};
 const pad = (n) => String(n).padStart(2, "0");
 const reduced = () =>
 	window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -274,13 +281,15 @@ function Hero() {
 
 function PhotoButton({ id, onPreview, className = "", label, children }) {
 	const imageRef = useRef(null);
+	const imageSources = photoOptimized(id);
 
 	useEffect(() => {
 		const image = imageRef.current;
 		if (!image || !photoMeta[id]) return;
 
 		const applyFraming = () => {
-			const frame = image.parentElement;
+			const frame =
+				image.parentElement?.parentElement || image.parentElement;
 			if (!frame) return;
 			const rect = frame.getBoundingClientRect();
 			if (!rect.width || !rect.height) return;
@@ -298,7 +307,9 @@ function PhotoButton({ id, onPreview, className = "", label, children }) {
 
 		applyFraming();
 		const observer = new ResizeObserver(applyFraming);
-		observer.observe(image.parentElement);
+		observer.observe(
+			image.parentElement?.parentElement || image.parentElement,
+		);
 		return () => observer.disconnect();
 	}, [id]);
 
@@ -309,12 +320,20 @@ function PhotoButton({ id, onPreview, className = "", label, children }) {
 			onClick={(event) => onPreview(id, event.currentTarget)}
 			aria-label={label || `Xem ảnh cưới ${id + 1}`}
 		>
-			<img
-				ref={imageRef}
-				src={photo(id)}
-				alt={label || `Ảnh cưới ${id + 1}`}
-				loading="lazy"
-			/>
+			<picture>
+				<source
+					type="image/webp"
+					srcSet={imageSources.webp}
+					sizes="(max-width: 768px) 100vw, 33vw"
+				/>
+				<img
+					ref={imageRef}
+					src={imageSources.jpg}
+					alt={label || `Ảnh cưới ${id + 1}`}
+					loading="lazy"
+					decoding="async"
+				/>
+			</picture>
 			{children}
 			<span className="photo-zoom" aria-hidden="true">
 				<Maximize2 size={16} />
