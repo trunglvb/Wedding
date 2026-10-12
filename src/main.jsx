@@ -107,6 +107,8 @@ function Typed({ children, className = "", speed = 24 }) {
 function HeroImage({ item, incoming, serial }) {
 	const frame = useRef(null),
 		image = useRef(null);
+	const heroDesktop = photoOptimized(item.desktop);
+	const heroMobile = photoOptimized(item.mobile);
 	useLayoutEffect(() => {
 		const position = () => {
 			const id = window.matchMedia("(max-width:768px)").matches
@@ -135,11 +137,13 @@ function HeroImage({ item, incoming, serial }) {
 			<picture className="hero-picture">
 				<source
 					media="(max-width: 768px)"
-					srcSet={photo(item.mobile)}
+					type="image/webp"
+					srcSet={heroMobile.webp}
 				/>
+				<source type="image/webp" srcSet={heroDesktop.webp} />
 				<img
 					ref={image}
-					src={photo(item.desktop)}
+					src={heroDesktop.jpg}
 					alt="Nguyễn Nguyệt và Lường Cường trong bộ ảnh cưới"
 					fetchPriority="high"
 				/>
@@ -169,11 +173,12 @@ function Hero() {
 		busy.current = true;
 		const item = heroPhotos[next];
 		const image = new Image();
-		image.src = photo(
+		const sources = photoOptimized(
 			window.matchMedia("(max-width:768px)").matches
 				? item.mobile
 				: item.desktop,
 		);
+		image.src = sources.jpg;
 		try {
 			await image.decode();
 		} catch {
@@ -190,11 +195,12 @@ function Hero() {
 	useEffect(() => {
 		const upcoming = heroPhotos[(active + 1) % heroPhotos.length];
 		const image = new Image();
-		image.src = photo(
+		const sources = photoOptimized(
 			window.matchMedia("(max-width:768px)").matches
 				? upcoming.mobile
 				: upcoming.desktop,
 		);
+		image.src = sources.jpg;
 		if (paused || reduced()) return;
 		// Change photographs every 3 seconds; the slower reveal lasts 2.8 seconds.
 		const timer = setTimeout(() => {
@@ -299,7 +305,7 @@ function PhotoButton({ id, onPreview, className = "", label, children }) {
 				metadata.faces,
 				rect.width,
 				rect.height,
-				[0.5, 0.38],
+				[0.5, 0.5],
 			);
 			image.style.objectFit = "cover";
 			image.style.objectPosition = position.position;
