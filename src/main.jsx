@@ -385,7 +385,7 @@ function Couple({ onPreview }) {
 			bio: couple.groomBio,
 			meet: couple.groomMeet,
 			quote: "ANH KỂ",
-			id: 27,
+			id: 38,
 			detail: 29,
 			label: "Lường Cường trong quân phục bên Nguyễn Nguyệt",
 			number: "02",
@@ -481,7 +481,7 @@ function BubbleGallery({ onPreview, active }) {
 				</h3>
 				<p>Chạm một khoảnh khắc để xem trọn vẹn.</p>
 			</div>
-			<div className="bubble-field" aria-label="Toàn bộ 26 ảnh cưới">
+			<div className="bubble-field" aria-label="Toàn bộ ảnh cưới">
 				{allPhotos.map((id, i) => (
 					<div
 						key={id}
@@ -506,7 +506,7 @@ function BubbleGallery({ onPreview, active }) {
 				))}
 			</div>
 			<div className="bubble-bottom">
-				<span>26 KHOẢNH KHẮC · MỘT TÌNH YÊU</span>
+				<span>NHIỀU KHOẢNH KHẮC · MỘT TÌNH YÊU</span>
 			</div>
 		</div>
 	);

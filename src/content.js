@@ -54,9 +54,10 @@ export const memories = [
 		photos: [5, 24, 7, 15],
 	},
 ];
-export const allPhotos = Object.keys(photoMeta)
-	.map(Number)
-	.sort((a, b) => a - b);
+export const allPhotos = [
+	0, 1, 2, 3, 4, 5, 6, 7, 8, 27, 9, 10, 11, 12, 14, 15, 17, 18, 19, 20, 22,
+	23, 24, 25, 33, 38,
+];
 // Direct audio files are still required. Official references identify the requested recordings;
 // YouTube watch pages cannot be passed to an HTML audio element.
 export const tracks = [
@@ -65,12 +66,6 @@ export const tracks = [
 		artist: "Bon Nghiêm & 14 Casper",
 		file: `${import.meta.env.BASE_URL}music/nguoi-tot-nhat-cho-em.mp3`,
 		sourceUrl: "https://www.youtube.com/watch?v=YXhRfqyThno",
-	},
-	{
-		title: "Lý giải",
-		artist: "Hoàng Dũng",
-		file: `${import.meta.env.BASE_URL}music/ly-giai.mp3`,
-		sourceUrl: "https://www.youtube.com/watch?v=oQKZC6Qnrqw",
 	},
 	{
 		title: "Đường chân trời",
