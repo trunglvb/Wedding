@@ -24,6 +24,7 @@ import { Dialog } from "radix-ui";
 import { Button } from "./components/ui/button";
 import { couple, heroPhotos, memories, allPhotos, tracks } from "./content";
 import photoMeta from "./photo-meta.json";
+import heroMeta from "./hero-meta.json";
 import { coverFraming } from "./lib/photo-framing";
 import { TypingTitle } from "./components/typing-title";
 import { WeddingDetails } from "./components/wedding-details";
@@ -112,7 +113,7 @@ function HeroImage({ item, incoming, serial }) {
 			const id = window.matchMedia("(max-width:768px)").matches
 				? item.mobile
 				: item.desktop;
-			const metadata = photoMeta[id];
+			const metadata = heroMeta[id];
 			const rect = frame.current.getBoundingClientRect();
 			image.current.style.objectPosition = coverFraming(
 				metadata,
@@ -285,7 +286,7 @@ function PhotoButton({ id, onPreview, className = "", label, children }) {
 
 	useEffect(() => {
 		const image = imageRef.current;
-		if (!image || !photoMeta[id]) return;
+		if (!image || !heroMeta[id]) return;
 
 		const applyFraming = () => {
 			const frame =
@@ -293,7 +294,7 @@ function PhotoButton({ id, onPreview, className = "", label, children }) {
 			if (!frame) return;
 			const rect = frame.getBoundingClientRect();
 			if (!rect.width || !rect.height) return;
-			const metadata = photoMeta[id];
+			const metadata = heroMeta[id];
 			const position = coverFraming(
 				metadata,
 				metadata.faces,
